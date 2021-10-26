@@ -32,6 +32,6 @@ func main() {
 	}
 
 	if OpenTheRepoBrowser {
-		utils.OpenBrowser("https://github.com/TeoDev1611/fli")
+		utils.OpenBrowser("https://github.com/TeoDev1611/fil")
 	}
 }
