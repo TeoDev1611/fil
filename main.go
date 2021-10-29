@@ -9,8 +9,10 @@ import (
 var (
 	VERSION            = "unknow"
 	JsonSubCommand     *flaggy.Subcommand
+	YamlSubCommand     *flaggy.Subcommand
 	OpenTheRepoBrowser bool
 	JsonFileValue      = "defaultVal"
+	YamlFileValue      = "defaultVal"
 )
 
 // init function  
@@ -21,12 +23,17 @@ func init() {
 
 	flaggy.Bool(&OpenTheRepoBrowser, "o", "open", "Open the browser for show the repo and more help")
 
+	YamlSubCommand = flaggy.NewSubcommand("yml")
+	YamlSubCommand.Description = "The yaml file utils"
+	YamlSubCommand.String(&YamlFileValue, "f", "file", "Open the file with yaml pretty print")
+
 	JsonSubCommand = flaggy.NewSubcommand("json")
 	JsonSubCommand.Description = "The json parser utils"
 	JsonSubCommand.String(&JsonFileValue, "f", "file", "Open a file with json pretty print")
 
 	flaggy.SetVersion(VERSION)
 	flaggy.AttachSubcommand(JsonSubCommand, 1)
+	flaggy.AttachSubcommand(YamlSubCommand, 1)
 
 	flaggy.Parse()
 }
@@ -45,4 +52,11 @@ func main() {
 	if JsonFileValue != "defaultVal" {
 		cmds.PrettyPrintFileJson(JsonFileValue)
 	}
+	/*
+		YamlSubCommand Flags functions
+	*/
+	if YamlFileValue != "defaultVal" {
+		cmds.PrettyPrintYamlFile(YamlFileValue)
+	}
+
 }
