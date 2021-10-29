@@ -11,6 +11,7 @@ var (
 	OpenTheRepoBrowser bool
 )
 
+// init function  
 func init() {
 	flaggy.SetName("Fil < Files is live >")
 	flaggy.SetDescription(`A simple file parser formatter and pretty printer :D`)
@@ -26,6 +27,7 @@ func init() {
 	flaggy.Parse()
 }
 
+// main function  
 func main() {
 	if JsonSubCommand.Used {
 		println("asdasd")
