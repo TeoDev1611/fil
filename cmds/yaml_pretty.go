@@ -10,6 +10,10 @@ import (
 	"github.com/mattn/go-colorable"
 )
 
+/*
+	Code adapted from https://github.com/goccy/go-yaml/blob/master/cmd/ycat/ycat.go thanks for your amazing work
+*/
+
 const escape = "\x1b"
 
 func format(attr color.Attribute) string {
