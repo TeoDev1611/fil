@@ -10,9 +10,11 @@ var (
 	VERSION            = "unknow"
 	JsonSubCommand     *flaggy.Subcommand
 	YamlSubCommand     *flaggy.Subcommand
+	XmlSubCommand      *flaggy.Subcommand
 	OpenTheRepoBrowser bool
 	JsonFileValue      = "defaultVal"
 	YamlFileValue      = "defaultVal"
+	XmlFileValue       = "defaultVal"
 )
 
 // init function  
@@ -22,6 +24,10 @@ func init() {
 	flaggy.DefaultParser.AdditionalHelpPrepend = "https://github.com/TeoDev1611/fil"
 
 	flaggy.Bool(&OpenTheRepoBrowser, "o", "open", "Open the browser for show the repo and more help")
+
+	XmlSubCommand = flaggy.NewSubcommand("xml")
+	XmlSubCommand.Description = "The xml file utils"
+	XmlSubCommand.String(&YamlFileValue, "f", "file", "Open the file with xml pretty print")
 
 	YamlSubCommand = flaggy.NewSubcommand("yml")
 	YamlSubCommand.Description = "The yaml file utils"
@@ -34,6 +40,7 @@ func init() {
 	flaggy.SetVersion(VERSION)
 	flaggy.AttachSubcommand(JsonSubCommand, 1)
 	flaggy.AttachSubcommand(YamlSubCommand, 1)
+	flaggy.AttachSubcommand(XmlSubCommand, 1)
 
 	flaggy.Parse()
 }
@@ -57,6 +64,12 @@ func main() {
 	*/
 	if YamlFileValue != "defaultVal" {
 		cmds.PrettyPrintYamlFile(YamlFileValue)
+	}
+	/*
+		YamlSubCommand Flags functions
+	*/
+	if XmlFileValue != "defaultVal" {
+		cmds.PrettyFormatXmlFile(XmlFileValue)
 	}
 
 }

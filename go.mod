@@ -5,6 +5,7 @@ go 1.17
 require (
 	github.com/TylerBrock/colorjson v0.0.0-20200706003622-8a50f05110d2
 	github.com/fatih/color v1.13.0
+	github.com/go-xmlfmt/xmlfmt v0.0.0-20191208150333-d5b6f63a941b
 	github.com/goccy/go-yaml v1.9.4
 	github.com/integrii/flaggy v1.4.4
 	github.com/mattn/go-colorable v0.1.9
