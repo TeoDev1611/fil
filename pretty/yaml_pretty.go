@@ -20,7 +20,7 @@ func format(attr color.Attribute) string {
 	return fmt.Sprintf("%s[%dm", escape, attr)
 }
 
-func ycatPrintter(file string) error {
+func YcatPrintter(file string) error {
 	tokens := lexer.Tokenize(string(file))
 	var p printer.Printer
 	p.LineNumber = true
@@ -71,6 +71,6 @@ func ycatPrintter(file string) error {
 
 func PrettyPrintYamlFile(file string) {
 	fileData := utils.OpenFiles(file)
-	err := ycatPrintter(fileData)
+	err := YcatPrintter(fileData)
 	utils.CheckErrors(err)
 }

@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/TeoDev1611/fil/cmds"
+	cmds "github.com/TeoDev1611/fil/pretty"
 	"github.com/TeoDev1611/fil/utils"
 	"github.com/integrii/flaggy"
 )
