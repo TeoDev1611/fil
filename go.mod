@@ -9,6 +9,7 @@ require (
 	github.com/goccy/go-yaml v1.9.4
 	github.com/integrii/flaggy v1.4.4
 	github.com/mattn/go-colorable v0.1.9
+	github.com/pelletier/go-toml v1.9.4
 )
 
 require (
